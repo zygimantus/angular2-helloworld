@@ -1,6 +1,15 @@
-import { Component } from 'angular2/core';
+import { Component } from 'angular2/core'
+
 @Component( {
-    selector: 'my-app',
-    template: '<h1>Hello World !</h1>'
+    selector: 'my-component',
+    template: '<div><button (click)="sayMyName()">Do Something Special</button > </div>'
 } )
-export class AppComponent { }
+export class MyComponent {
+    public name: String;
+    constructor() {
+        this.name = 'Angular 2 Rocks !';
+    }
+    sayMyName() {
+        alert( this.name );
+    }
+}
